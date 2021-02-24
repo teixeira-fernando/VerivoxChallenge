@@ -1,0 +1,7 @@
+{
+  "reporter": "spec",
+  "require": "ts-node/register",
+  "timeout": 20000,
+  "recursive": true,
+  "global": ["request"]
+}
