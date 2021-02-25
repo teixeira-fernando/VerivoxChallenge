@@ -32,6 +32,7 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": "warn",
     "class-methods-use-this": "off",
-    "no-unused-expressions": "warn"
+    "no-unused-expressions": "warn",
+    "max-len": "warn"
   },
 };

@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import schemaJsonResponse from '../schemas/StreetsSchema';
+import streetsResponseExpected from '../data/response/StreetsResponse';
 
 require('dotenv').config();
 const request = require('supertest');
@@ -10,10 +11,10 @@ const requestContainer = request(process.env.API_BASEURL + API_PATH);
 describe('Scenario 4: Find the streets for a given postcode', () => {
   describe('Given valid German postal codes and cities', () => {
     const testParameters = [
-      { postalCode: 10409, city: 'Berlin' },
-      { postalCode: 77716, city: 'Fischerbach' },
-      { postalCode: 77716, city: 'Haslach' },
-      { postalCode: 77716, city: 'Hofstetten' },
+      { postalCode: 10409, city: 'Berlin', expectedResponse: streetsResponseExpected.Berlin },
+      { postalCode: 77716, city: 'Fischerbach', expectedResponse: streetsResponseExpected.Fischerbach },
+      { postalCode: 77716, city: 'Haslach', expectedResponse: streetsResponseExpected.Haslach },
+      { postalCode: 77716, city: 'Hofstetten', expectedResponse: streetsResponseExpected.Hofstetten },
     ];
 
     testParameters.forEach((parameter) => {
@@ -27,7 +28,8 @@ describe('Scenario 4: Find the streets for a given postcode', () => {
           .end((err, res) => {
             if (err) return done(err);
 
-            // expect(res.body).to.be.eql(parameter.expected);
+            // matches the entire expected response, validating also if the special characters are displayed correctly
+            expect(res.body).to.be.eql(parameter.expectedResponse);
 
             // If the response is valid, then the 'error' object will be undefined
             expect(schemaJsonResponse.validate(res.body).error).to.be.undefined;
