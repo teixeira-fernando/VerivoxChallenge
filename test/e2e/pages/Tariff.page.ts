@@ -7,8 +7,8 @@ class TariffPage extends Page {
     super.open('internet/vergleich/');
   }
 
-  openWithSpecificParameters() {
-    super.open('internet/vergleich/#/?phonePrefix=030&minSpeed=50000');
+  openWithSpecificParameters(path: string) {
+    super.open(path);
   }
 
   getListOfProviderResults() {
@@ -34,6 +34,21 @@ class TariffPage extends Page {
   isTariffDetailsTelephoneSelected() {
     // if it is selected, the inactive class is removed from the element
     return !($('.plus-before.mobile.inactive').isExisting());
+  }
+
+  isTariffDetailsTVSelected() {
+    return !($('.plus-before.tv.inactive').isExisting());
+  }
+
+  getNumberOfResultsText() : string {
+    $('.summary-tariff').waitForClickable();
+    return $('.summary-tariff').getText().replace(/\D/g, '');
+  }
+
+  closeCookiesPopUp() {
+    if ($('#uc-btn-accept-banner').isDisplayed()) {
+      $('#uc-btn-accept-banner').click();
+    }
   }
 }
 

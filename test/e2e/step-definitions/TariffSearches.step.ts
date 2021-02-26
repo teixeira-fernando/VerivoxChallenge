@@ -3,6 +3,8 @@ import {
 } from 'cucumber';
 import TariffPage from '../pages/Tariff.page';
 
+let initialNumberOfResults = '';
+
 Given(/^that I can open the broadband tariff search page$/, () => {
   TariffPage.open();
 });
@@ -19,7 +21,9 @@ Then(/^the URL should change to include a default phone prefix$/, () => {
 });
 
 Given(/^that I can open the broadband tariff search page with some preconfigured parameters$/, () => {
-  TariffPage.openWithSpecificParameters();
+  TariffPage.openWithSpecificParameters('internet/vergleich/#/?phonePrefix=030&minSpeed=50000');
+  TariffPage.closeCookiesPopUp();
+  initialNumberOfResults = TariffPage.getNumberOfResultsText();
 });
 
 Then(/^I should see a page that lists the available tariffs for my selection$/, () => {
@@ -28,11 +32,14 @@ Then(/^I should see a page that lists the available tariffs for my selection$/, 
 });
 
 When(/^I change the URL parameters to include TV option$/, () => {
-
+  TariffPage.openWithSpecificParameters('internet/vergleich/#/?phonePrefix=030&minSpeed=100000&tv=1');
 });
 
 Then(/^I should see different tariffs for my adjusted tariff search options$/, () => {
-
+  expect(TariffPage.isTariffDetailsTelephoneSelected()).toBeTruthy();
+  expect(TariffPage.isTariffDetailsTVSelected()).toBeTruthy();
+  const finalNumberOfResults = TariffPage.getNumberOfResultsText();
+  expect(Number(finalNumberOfResults)).toBeLessThan(Number(initialNumberOfResults));
 });
 
 After((scenario) => {
