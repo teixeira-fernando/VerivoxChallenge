@@ -5,6 +5,9 @@ Project with E2E/UI tests using WebDriverIO and API tests with SuperTest
     * NodeJs
     * Npm
 
+* Setup instructions
+    * Run ```npm install``` to install all the dependencies
+
 
 # API Tests
 
