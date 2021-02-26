@@ -39,6 +39,10 @@ Project with E2E/UI tests using WebDriverIO and API tests with SuperTest
 * Other info:
     * For API Tests, I followed the Gherkin scenarios specified in the documentation, but I prefered to use the simpler Mocha implementation for writing those scenarios, instead of using Cucumber. This is a cleaner way of writing the scenarios and one less layer to give maintenance;
     
+* Report:
+
+![alt text](images/APITestsReport.png "API tests report with Mochawesome")
+
 # UI/E2E Tests
 
 * Main UI/E2E Tests stack:
@@ -60,9 +64,14 @@ Project with E2E/UI tests using WebDriverIO and API tests with SuperTest
     * ```npm run test:ui ```
         * The HTML report is generated automatically in the path test/e2e/report
     * If you want to execute the tests with Docker:
-        * run ```npm run docker:up:grid ``` to bring up the selenium grid
+        * run ```npm run docker:up:grid``` to bring up the selenium grid
         * then run: ```npm run test:remoteGrid ```
 
 * Intructions to run Lint:
     * To check code: ```npm run lint```
     * To fix code: ```npm run lint:fix```
+
+
+* Report:
+
+![alt text](images/UITestsReport.png "UI tests report with CucumberHTMLReporter")
