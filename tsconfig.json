@@ -8,7 +8,7 @@
             "*": ["./*"],
             "src/*": ["./src/*"]
         },
-        "types": ["node", "@wdio/sync", "@wdio/cucumber-framework", "supertest", "mocha"]
+        "types": ["node", "@wdio/sync", "@wdio/cucumber-framework", "supertest", "@wdio/selenium-standalone-service", "mocha"]
     },
     "include": [
         "./test/**/*.ts"
