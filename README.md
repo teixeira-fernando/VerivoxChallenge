@@ -53,6 +53,7 @@ Project with E2E/UI tests using WebDriverIO and API tests with SuperTest
 
 * UI/E2E Tests Features:
     * BDD with CucumberJS
+    * Page Objects Pattern
     * HTML Report with Cucumber report
     * Screnshots capture and attached into the report when tests fail
     * Docker config to run tests in containers;
