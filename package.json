@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test:ui": "npx wdio wdio.conf.js",
+    "docker:up:grid": "docker-compose up -d",
+    "docker:down:grid": "docker-compose down",
+    "test:remoteGrid": "npx wdio wdioRemote.conf.js",
     "test:api": "npx mocha --config test/api/config/.mocharc.json test/api/specs/*.ts",
     "test:api:generateReport": "npx mocha --config test/api/config/.mocharc.json test/api/specs/*.ts --reporter mochawesome --reporter-options reportDir=./test/api/report",
     "lint": "npx eslint 'test/**/*.ts'",

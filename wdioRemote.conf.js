@@ -6,20 +6,20 @@ const {
 } = require('fs-extra');
 
 exports.config = {
-    runner: 'local',
     specs: [
         './test/e2e/features/**/*.feature'
     ],
     maxInstances: 10,
-    capabilities: [{   
-        maxInstances: 5,
-        browserName: 'chrome',
-        // If outputDir is provided WebdriverIO can capture driver session logs
-        // it is possible to configure which logTypes to include/exclude.
-        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-        // excludeDriverLogs: ['bugreport', 'server'],
-    }],
-    logLevel: 'debug',
+    capabilities: [{
+            maxInstances: 5,
+            browserName: 'firefox'
+        },
+        {
+            maxInstances: 5,
+            browserName: 'chrome'
+        },
+    ],
+    logLevel: 'info',
     bail: 0,
     baseUrl: 'https://www.verivox.de/',
     outputDir: './test/e2e/report/logs',
@@ -27,6 +27,10 @@ exports.config = {
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     services: ['selenium-standalone'],
+    port: 4444,
+    seleniumArgs: {
+        seleniumArgs: ['-port', '4444'],
+    },
     framework: 'cucumber',
     reporters: ['spec', 
         ['cucumberjs-json', {
@@ -85,5 +89,4 @@ exports.config = {
             // for more options see https://github.com/wswebcreation/multiple-cucumber-html-reporter#options
         });
     },
-    
 }
