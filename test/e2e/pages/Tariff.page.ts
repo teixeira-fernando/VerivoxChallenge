@@ -41,14 +41,13 @@ class TariffPage extends Page {
   }
 
   getNumberOfResultsText() : string {
-    $('.summary-tariff').waitForClickable();
-    return $('.summary-tariff').getText().replace(/\D/g, '');
+    $('h2.summary-tariff').waitForClickable();
+    return $('h2.summary-tariff').getText().replace(/\D/g, '');
   }
 
   closeCookiesPopUp() {
-    if ($('#uc-btn-accept-banner').isDisplayed()) {
-      $('#uc-btn-accept-banner').click();
-    }
+    $('#uc-btn-accept-banner').waitForClickable();
+    $('#uc-btn-accept-banner').click();
   }
 }
 
