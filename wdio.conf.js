@@ -26,7 +26,7 @@ exports.config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['selenium-standalone'],
+    services: ['chromedriver'],
     framework: 'cucumber',
     reporters: ['spec', 
         ['cucumberjs-json', {

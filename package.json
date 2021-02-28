@@ -30,7 +30,6 @@
     "@typescript-eslint/parser": "^4.15.2",
     "@wdio/cli": "6.1.16",
     "chai": "^4.3.0",
-    "chromedriver": "^88.0.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.20.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -55,6 +54,8 @@
     "@wdio/selenium-standalone-service": "6.1.14",
     "@wdio/spec-reporter": "6.1.14",
     "@wdio/sync": "6.1.14",
+    "chromedriver": "^88.0.0",
+    "wdio-chromedriver-service": "6.0.4",
     "wdio-cucumber-reporter": "0.0.2"
   }
 }

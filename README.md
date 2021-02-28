@@ -5,6 +5,7 @@ Project with E2E/UI tests using WebDriverIO and API tests with SuperTest
     * NodeJs
     * Npm
     * Docker (if you want to run the E2E/UI tests inside containers)
+    * Chrome browser (For E2E/UI tests)
 
 * Setup instructions
     * Run ```npm install``` to install all the dependencies
