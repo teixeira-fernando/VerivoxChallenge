@@ -27,10 +27,8 @@ jobs:
       - run: npm ci
       - name: run API tests
         run: npm run test:api
-      - name: setup chrome
-        uses: browser-actions/setup-chrome@latest
-      - name: chrome version command
-        run: chrome --version
+      - name: Start selenium grid
+        run: npm run docker:up:grid
       - name: run E2E tests
-        run: npm run test:ui
+        run: npm run test:remoteGrid
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
