@@ -54,7 +54,7 @@
     "@wdio/selenium-standalone-service": "6.1.14",
     "@wdio/spec-reporter": "6.1.14",
     "@wdio/sync": "6.1.14",
-    "chromedriver": "^88.0.0",
+    "chromedriver": "^100.0.0",
     "wdio-chromedriver-service": "6.0.4",
     "wdio-cucumber-reporter": "0.0.2"
   }
