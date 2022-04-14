@@ -31,7 +31,7 @@
     "@wdio/cli": "6.1.16",
     "chai": "^4.3.0",
     "dotenv": "^16.0.0",
-    "eslint": "^7.20.0",
+    "eslint": "^8.0.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-import-resolver-typescript": "^2.4.0",
