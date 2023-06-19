@@ -55,7 +55,7 @@
     "@wdio/spec-reporter": "6.1.14",
     "@wdio/sync": "6.1.14",
     "chromedriver": "104.0.0",
-    "wdio-chromedriver-service": "7.3.2",
+    "wdio-chromedriver-service": "8.1.1",
     "wdio-cucumber-reporter": "0.0.2"
   }
 }
