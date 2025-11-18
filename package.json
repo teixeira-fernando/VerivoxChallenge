@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/teixeira-fernando/VerivoxChallenge#readme",
   "dependencies": {
-    "@types/mocha": "^9.0.0",
+    "@types/mocha": "^10.0.0",
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
